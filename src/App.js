@@ -11,8 +11,8 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selNodeId: 226,
-			relNodeId: 227
+			selNodeId: 0,
+			relNodeId: undefined
 		}
 
 		this.setSelectedNode = this.setSelectedNode.bind(this);

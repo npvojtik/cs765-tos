@@ -103,7 +103,7 @@ class ChordDisplay extends Component {
 												fontWeight: "bold", 
 												color: myFontColors[ind], 
 												cursor: "pointer"}}
-											onClick={() => this.props.setRelatedNode(node.id)   }
+											onClick={() => this.props.setRelatedNode(node.id)}
 										>
 											{ node.name }
 										</div>
@@ -118,7 +118,8 @@ class ChordDisplay extends Component {
 							resizeWithWindow={true}
 							groupLabels={myLabels}
 							groupColors={myColors}
-							style={{flex: 1, marginTop: 40}}
+							groupOnClick={(ind) => this.props.setRelatedNode(myMatrixNodes[ind].id)}
+							style={{flex: 1, marginTop: 20}}
 						/>
 					</>
 				}
