@@ -3,24 +3,6 @@ import ChordDiagram from 'react-chord-diagram';
 
 import nodes from './data/data.json';
 
-const matrix = [
-  [11975, 5871, 8916, 2868],
-  [1951, 10048, 2060, 6171],
-  [8010, 16145, 8090, 8045],
-  [1013, 990, 940, 6907]
-]; 
-
-const matrix2 = [
-	[0, 7675, 1406, 234, 232],
-	[7675, 0, 164, 1674, 285],
-	[1406, 164, 0, 219, 0],
-	[234, 1674, 219, 0, 0],
-	[232, 285, 0, 0, 0]
-
-]
-
-
-
 const getAlsoIntersection = (sel, rel) => {
 	const selAlsoIds = Object.keys(sel.also);
 	const relAlsoIds = Object.keys(rel.also);
@@ -63,8 +45,6 @@ const createMatrix = (sel, rel) => {
 			return item.also[node.id];
 		})
 	));
-
-	console.log(matrix);
 	return matrix;
 }
 
@@ -81,7 +61,6 @@ class ChordDisplay extends Component {
 
 	render() {
 		const myMatrixNodes = this.props.relNode !== undefined ? getMatrixNodes(this.props.selNode, this.props.relNode) : undefined;
-		console.log(myMatrixNodes);
 		const myMatrix = this.props.relNode !== undefined ? createMatrix(this.props.selNode, this.props.relNode) : undefined;
 		const myColors = myMatrix !== undefined ? colors.slice(0, myMatrix.length) : undefined;
 		const myFontColors = myMatrix !== undefined ? fontColors.slice(0, myMatrix.length) : undefined;

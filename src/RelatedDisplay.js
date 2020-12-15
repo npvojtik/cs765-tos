@@ -150,7 +150,6 @@ class RelatedDisplay extends Component {
 	}
 
 	setSortFunction = (keyword) => {
-		console.log("keyword");
 		const curKeyword = this.state.keyword;
 		// we're going in reverse order
 		if (curKeyword === keyword) {
